@@ -26,10 +26,10 @@ const SwiperSlider = () => {
       modules={[Pagination, Autoplay]}
       className="mySwiper"
     >
-      <SwiperSlide className="bg-red-500">Slide 1</SwiperSlide>
-      <SwiperSlide className="bg-blue-500">Slide 2</SwiperSlide>
-      <SwiperSlide className="bg-green-500">Slide 3</SwiperSlide>
-      <SwiperSlide className="bg-teal-500">Slide 9</SwiperSlide>
+      <SwiperSlide className="bg-black">Slide 1</SwiperSlide>
+      <SwiperSlide className="bg-black/80">Slide 2</SwiperSlide>
+      <SwiperSlide className="bg-black">Slide 3</SwiperSlide>
+      <SwiperSlide className="bg-black/80">Slide 9</SwiperSlide>
     </Swiper>
   );
 };
