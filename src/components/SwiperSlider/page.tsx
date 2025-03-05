@@ -10,6 +10,8 @@ import "@/app/styles/globals.css";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
+import { slideData } from "@/app/data/data";
 
 const SwiperSlider = () => {
   return (
@@ -26,10 +28,28 @@ const SwiperSlider = () => {
       modules={[Pagination, Autoplay]}
       className="mySwiper"
     >
-      <SwiperSlide className="bg-black">Slide 1</SwiperSlide>
-      <SwiperSlide className="bg-black/80">Slide 2</SwiperSlide>
-      <SwiperSlide className="bg-black">Slide 3</SwiperSlide>
-      <SwiperSlide className="bg-black/80">Slide 9</SwiperSlide>
+      {slideData.length > 0 &&
+        slideData?.map((slide, index) => (
+          <SwiperSlide key={index}>
+            {slide?.image && (
+              <Image
+                src={slide?.image}
+                alt={`Slide ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className="image-rendering-auto"
+              />
+            )}
+            {slide?.title && (
+              <div className="absolute inset-0 m-4 bg-black/50 flex items-center justify-center">
+                <div>
+                  <h2 className="text-white mb-2">{slide?.title}</h2>
+                  <p className="text-white">{slide?.description}</p>
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+        ))}
     </Swiper>
   );
 };
