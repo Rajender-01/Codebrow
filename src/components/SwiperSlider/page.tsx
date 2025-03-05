@@ -33,11 +33,11 @@ const SwiperSlider = () => {
           <SwiperSlide key={index}>
             {slide?.image && (
               <Image
+                loading="lazy"
                 src={slide?.image}
                 alt={`Slide ${index + 1}`}
-                layout="fill"
+                layout="responsive"
                 objectFit="cover"
-                className="image-rendering-auto"
               />
             )}
             {slide?.title && (
