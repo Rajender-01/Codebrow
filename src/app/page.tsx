@@ -1,11 +1,13 @@
-import SwiperSlider from "@/components/SwiperSlider/page";
+import SwiperSlider from "@/components/SwiperSlider/SwiperSlider";
 import React from "react";
+import NewsletterBanner from "@/components/NewsletterBanner/NewsletterBanner";
 
 const Page = () => {
   return (
-    <div className="mx-auto p-4">
+    <>
+      <NewsletterBanner />
       <SwiperSlider />
-    </div>
+    </>
   );
 };
 
