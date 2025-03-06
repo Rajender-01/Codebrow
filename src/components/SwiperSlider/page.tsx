@@ -36,7 +36,7 @@ const SwiperSlider = () => {
                 loading="lazy"
                 src={slide?.image}
                 alt={`Slide ${index + 1}`}
-                layout="responsive"
+                layout="fill"
                 objectFit="cover"
               />
             )}
