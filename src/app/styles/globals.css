@@ -1,6 +1,12 @@
+@import "tailwindcss";
 @import "./_reset.css";
 @import "./_swiper.css";
-@import "tailwindcss";
+
+@theme {
+  --dark-gray: #141414;
+  --light-gray: #191919;
+  --gray-font-color: #98989a;
+}
 
 @layer base {
   h1 {
