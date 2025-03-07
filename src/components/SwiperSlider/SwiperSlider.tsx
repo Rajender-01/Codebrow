@@ -37,7 +37,7 @@ const SwiperSlider = () => {
                 src={slide?.image}
                 alt={`Slide ${index + 1}`}
                 layout="fill"
-                objectFit="cover"
+                className="object-cover"
               />
             )}
             {slide?.title && (

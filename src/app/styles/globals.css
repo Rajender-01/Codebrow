@@ -32,4 +32,8 @@
   h6 {
     @apply text-base font-normal;
   }
+
+  p {
+    @apply text-lg leading-relaxed;
+  }
 }
