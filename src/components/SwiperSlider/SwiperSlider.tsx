@@ -33,7 +33,8 @@ const SwiperSlider = () => {
           <SwiperSlide key={index}>
             {slide?.image && (
               <Image
-                loading="lazy"
+                loading="eager"
+                priority
                 src={slide?.image}
                 alt={`Slide ${index + 1}`}
                 width={1000}
