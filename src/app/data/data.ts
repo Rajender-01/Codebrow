@@ -34,7 +34,7 @@ export const featuredBlogs = [
     views: 60,
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    slug: "/news/progressive-policies",
+    slug: "/",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ export const featuredBlogs = [
     views: 92,
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    slug: "/news/ai-innovations",
+    slug: "/",
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const featuredBlogs = [
     views: 124,
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    slug: "/news/covid-variants",
+    slug: "/",
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ export const featuredBlogs = [
     views: 124,
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    slug: "/news/covid-variants",
+    slug: "/",
   },
   {
     id: 6,
@@ -74,6 +74,6 @@ export const featuredBlogs = [
     views: 124,
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    slug: "/news/covid-variants",
+    slug: "/",
   },
 ];

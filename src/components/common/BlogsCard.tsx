@@ -35,7 +35,7 @@ const BlogsCard: React.FC<NewsCardProps> = ({
           sizes="(max-width: 768px) 100vw, 512px"
           objectFit="cover"
           className="transition-transform duration-300 hover:scale-105"
-          priority={true}
+          priority={isFeatured}
           loading="lazy"
           quality={80}
         />
