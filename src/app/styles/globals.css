@@ -32,4 +32,14 @@
   h6 {
     @apply text-base font-normal;
   }
+
+  p {
+    @apply text-sm sm:text-lg leading-relaxed;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-6xl px-4;
+  }
 }
