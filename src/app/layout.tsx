@@ -2,7 +2,11 @@ import "@/app/styles/globals.css";
 import Header from "@/components/layout/Header/Header";
 import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter"
+});
 
 export const metadata = {
   title: "Codebrow",
