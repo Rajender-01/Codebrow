@@ -1,11 +1,12 @@
-import React from 'react'
+import NewsletterBanner from "@/components/NewsletterBanner/NewsletterBanner";
+import React from "react";
 
 const Header = () => {
   return (
-    <div>
-      Header
-    </div>
-  )
-}
+    <>
+      <NewsletterBanner />
+    </>
+  );
+};
 
-export default Header
+export default Header;
