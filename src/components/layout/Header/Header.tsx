@@ -1,4 +1,4 @@
-import NewsletterBanner from "@/components/NewsletterBanner/NewsletterBanner";
+import NewsletterBanner from "@/components/sections/NewsletterBanner";
 import React from "react";
 
 const Header = () => {
