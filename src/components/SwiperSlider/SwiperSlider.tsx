@@ -32,14 +32,20 @@ const SwiperSlider = () => {
         slideData?.map((slide, index) => (
           <SwiperSlide key={index}>
             {slide?.image && (
-              <Image
-                loading="eager"
-                priority
-                src={slide?.image}
-                alt={`Slide ${index + 1}`}
-                width={1000}
-                height={600}
-              />
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={slide?.image}
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  quality={80}
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
             )}
             {slide?.title && (
               <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
