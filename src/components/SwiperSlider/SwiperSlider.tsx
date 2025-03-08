@@ -36,8 +36,8 @@ const SwiperSlider = () => {
                 loading="lazy"
                 src={slide?.image}
                 alt={`Slide ${index + 1}`}
-                layout="fill"
-                className="object-cover"
+                width={1000}
+                height={600}
               />
             )}
             {slide?.title && (
