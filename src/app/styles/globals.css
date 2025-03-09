@@ -47,4 +47,12 @@
   .underline {
     @apply decoration-1 decoration-[var(--gray-font-color)] underline underline-offset-8;
   }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
 }
