@@ -1,9 +1,5 @@
+import { StatIconProps } from "@/app/types";
 import React from "react";
-
-interface StatIconProps {
-  icon: string;
-  value: number;
-}
 
 const StatIcon: React.FC<StatIconProps> = ({ icon, value }) => {
   const iconPath =

@@ -48,7 +48,7 @@ const SwiperSlider = () => {
               </div>
             )}
             {slide?.title && (
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/50 flex-center">
                 <div>
                   <h2 className="text-white mb-2">{slide?.title}</h2>
                   <p className="text-white">{slide?.description}</p>

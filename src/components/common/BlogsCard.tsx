@@ -3,16 +3,7 @@ import React from "react";
 import StatIcon from "./StatIcon";
 import Link from "next/link";
 import ArrowIcon from "./ArrowIcon";
-
-interface NewsCardProps {
-  title: string;
-  image: string;
-  category: string;
-  likes: number;
-  views: number;
-  slug: string;
-  isFeatured?: boolean;
-}
+import { NewsCardProps } from "@/app/types";
 
 const BlogsCard: React.FC<NewsCardProps> = ({
   title,
@@ -42,7 +33,7 @@ const BlogsCard: React.FC<NewsCardProps> = ({
       </div>
       <h3 className="mb-2 text-lg font-medium">{title}</h3>
       <div className="mb-4 text-sm text-gray-400">{category}</div>
-      <div className="flex items-center justify-between mt-auto">
+      <div className="flex-center mt-auto">
         <div className="flex items-center gap-4">
           <StatIcon icon="like" value={likes} />
           <StatIcon icon="view" value={views} />
