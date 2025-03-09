@@ -1,7 +1,13 @@
-import "./globals.css";
+import "@/app/styles/globals.css";
+import Header from "@/components/layout/Header/Header";
 import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+});
 
 export const metadata = {
   title: "Codebrow",
@@ -17,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen`}
+        className={`${inter.className} bg-gray-100 dark:bg-[var(--dark-gray)] text-gray-900 dark:text-gray-100 min-h-screen`}
       >
-        {/* Navbar */}
+        <Header />
         {children}
         {/* footer */}
       </body>
