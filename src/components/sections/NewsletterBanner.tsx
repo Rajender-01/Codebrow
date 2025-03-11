@@ -6,7 +6,7 @@ const NewsletterBanner = () => {
   return (
     <Link
       href={"/"}
-      className="w-full flex-center underline md:no-underline container mx-auto h-auto text-[var(--white)] py-4 text-center group "
+      className="w-full mt-16 flex-center underline md:no-underline container mx-auto h-auto dark:text-[var(--white)] py-4 text-center group "
     >
       <p>
         Subscribe to our newsletter to get the latest updates and promotions
