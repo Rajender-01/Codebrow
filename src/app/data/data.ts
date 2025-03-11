@@ -1,3 +1,10 @@
+export const navigationData = [
+  { id: 1, name: "Home", path: "/" },
+  { id: 2, name: "Category", path: "/category" },
+  { id: 3, name: "About", path: "/about" },
+  { id: 4, name: "Policy", path: "/policy" }
+];
+
 export const slideData = [
   {
     image:
