@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { navigationData } from "@/app/data/data";
 import dynamic from "next/dynamic";
+import Button from "@/components/common/Button";
 const ResponsiveHeader = dynamic(() => import("./ResponsiveHeader"), { ssr: false });
 
 const Header = () => {
@@ -40,12 +41,12 @@ const Header = () => {
             <ul className="flex space-x-8">
               {navigationData.length > 0 && navigationData?.map((item) => (
                 <li key={item?.id}>
-                  <a
+                  <Link
                     href={item?.path}
                     className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
                   >
                     {item?.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -53,12 +54,10 @@ const Header = () => {
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <a
-              href="/contact"
-              className="bg-yellow-400 hover:bg-yellow-300 text-black font-medium py-2 px-4 rounded-md transition-colors duration-200"
-            >
-              Contact Us
-            </a>
+            <Button
+              label={"Contact Us"}
+              link={"/contact"}
+            />
           </div>
 
           {/* Mobile Menu Button */}
