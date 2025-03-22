@@ -1,27 +1,50 @@
-"use client"
+"use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { navigationData } from "@/app/data/data";
-import dynamic from "next/dynamic";
 import Button from "@/components/common/Button";
-const ResponsiveHeader = dynamic(() => import("./ResponsiveHeader"), { ssr: false });
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isResponsiveHeaderLoaded, setIsResponsiveHeaderLoaded] = useState(false);
+  const responsiveHeaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 95) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 95);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsResponsiveHeaderLoaded(true);
+          observer.unobserve(responsiveHeaderRef.current!);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = responsiveHeaderRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  const ResponsiveHeader = isResponsiveHeaderLoaded
+    ? React.lazy(() => import("./ResponsiveHeader"))
+    : null;
 
   return (
     <header
@@ -29,9 +52,9 @@ const Header = () => {
         }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex-center h-16">
+        <div className="flex-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div>
             <Link href="/" className="flex items-center">
               <span className="ml-2 text-white text-lg font-bold">Codebrow</span>
             </Link>
@@ -39,32 +62,36 @@ const Header = () => {
 
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
-              {navigationData.length > 0 && navigationData?.map((item) => (
-                <li key={item?.id}>
-                  <Link
-                    href={item?.path}
-                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
-                  >
-                    {item?.name}
-                  </Link>
-                </li>
-              ))}
+              {navigationData.length > 0 &&
+                navigationData?.map((item) => (
+                  <li key={item?.id}>
+                    <Link
+                      href={item?.path}
+                      className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
+                    >
+                      {item?.name}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </nav>
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <Button
-              label={"Contact Us"}
-              link={"/contact"}
-            />
+            <Button label={"Contact Us"} link={"/contact"} />
           </div>
 
           {/* Mobile Menu Button */}
-          <ResponsiveHeader
-            isMenuOpen={isMenuOpen}
-            setIsMenuOpen={setIsMenuOpen}
-          />
+          <div ref={responsiveHeaderRef}>
+            {ResponsiveHeader && (
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <ResponsiveHeader
+                  isMenuOpen={isMenuOpen}
+                  setIsMenuOpen={setIsMenuOpen}
+                />
+              </React.Suspense>
+            )}
+          </div>
         </div>
       </div>
 
@@ -72,15 +99,16 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-gray-900">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navigationData.map((item) => (
-              <a
-                key={item.id}
-                href={item.path}
-                className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-yellow-400 hover:bg-gray-800 rounded-md"
-              >
-                {item.name}
-              </a>
-            ))}
+            {navigationData.length > 0 &&
+              navigationData?.map((item) => (
+                <a
+                  key={item?.id}
+                  href={item?.path}
+                  className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-yellow-400 hover:bg-gray-800 rounded-md"
+                >
+                  {item?.name}
+                </a>
+              ))}
             <a
               href="/contact"
               className="block px-3 py-2 mt-4 text-center text-base font-medium bg-yellow-400 hover:bg-yellow-500 text-black rounded-md"
