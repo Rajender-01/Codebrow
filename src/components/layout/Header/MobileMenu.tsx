@@ -1,14 +1,5 @@
+import { MobileMenuProps } from '@/app/types';
 import React from 'react';
-
-interface NavigationItem {
-  id: string | number;
-  path: string;
-  name: string;
-}
-
-interface MobileMenuProps {
-  navigationData: NavigationItem[];
-}
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ navigationData }) => {
   return (

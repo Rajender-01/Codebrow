@@ -13,3 +13,18 @@ export interface StatIconProps {
   icon: string;
   value: number;
 }
+
+export interface ResponsiveHeaderProps {
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface NavigationItem {
+  id: string | number;
+  path: string;
+  name: string;
+}
+
+export interface MobileMenuProps {
+  navigationData: NavigationItem[];
+}

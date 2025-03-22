@@ -1,6 +1,7 @@
+import { ResponsiveHeaderProps } from "@/app/types";
 import React from "react";
 
-const ResponsiveHeader = ({ isMenuOpen, setIsMenuOpen }) => {
+const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <div className="md:hidden">
       <button

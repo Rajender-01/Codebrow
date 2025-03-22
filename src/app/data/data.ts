@@ -1,8 +1,8 @@
 export const navigationData = [
   { id: 1, name: "Home", path: "/" },
-  { id: 2, name: "Category", path: "/category" },
-  { id: 3, name: "About", path: "/about" },
-  { id: 4, name: "Policy", path: "/policy" }
+  { id: 2, name: "Category", path: "/" },
+  { id: 3, name: "About", path: "/" },
+  { id: 4, name: "Policy", path: "/" }
 ];
 
 export const slideData = [
