@@ -29,9 +29,9 @@ const Header = () => {
         }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex-center h-16">
+        <div className="flex-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div>
             <Link href="/" className="flex items-center">
               <span className="ml-2 text-white text-lg font-bold">Codebrow</span>
             </Link>
@@ -72,13 +72,13 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-gray-900">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navigationData.map((item) => (
+            {navigationData.length > 0 && navigationData?.map((item) => (
               <a
-                key={item.id}
-                href={item.path}
+                key={item?.id}
+                href={item?.path}
                 className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-yellow-400 hover:bg-gray-800 rounded-md"
               >
-                {item.name}
+                {item?.name}
               </a>
             ))}
             <a
