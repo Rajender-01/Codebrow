@@ -8,11 +8,17 @@ const FeaturedBlogPosts = dynamic(() => import('@/components/sections/FeaturedBl
   ssr: false
 });
 
+const Newsletter = dynamic(() => import('@/components/sections/Newsletter'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+});
+
 const Page = () => {
   return (
     <>
       <SwiperSlider />
       <FeaturedBlogPosts />
+      <Newsletter />
     </>
   );
 };
