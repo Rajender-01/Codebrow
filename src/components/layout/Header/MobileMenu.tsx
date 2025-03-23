@@ -1,4 +1,5 @@
 import { MobileMenuProps } from '@/app/types';
+import Link from 'next/link';
 import React from 'react';
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ navigationData }) => {
@@ -15,12 +16,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ navigationData }) => {
               {item?.name}
             </a>
           ))}
-        <a
-          href="/contact"
+        <Link
+          href="/"
           className="block px-3 py-2 mt-4 text-center text-base font-medium bg-yellow-400 hover:bg-yellow-500 text-black rounded-md"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   );
