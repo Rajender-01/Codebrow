@@ -3,7 +3,6 @@ import Header from "@/components/layout/Header/Header";
 import NewsletterBanner from "@/components/sections/NewsletterBanner";
 import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
-import Newsletter from "@/components/sections/Newsletter";
 
 const Footer = dynamic(() => import("@/components/layout/Footer/Footer"), {
   ssr: true
