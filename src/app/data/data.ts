@@ -84,3 +84,48 @@ export const featuredBlogs = [
     slug: "/",
   },
 ];
+
+export const footerData = {
+  about: {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    email: {
+      label: "Email",
+      address: "info@jstemplate.net"
+    },
+    phone: {
+      label: "Phone",
+      number: "880 123 456 789"
+    }
+  },
+  quickLinks: [
+    { title: "Home", url: "/" },
+    { title: "About", url: "/" },
+    { title: "Blog", url: "/" },
+    { title: "Archived", url: "/" },
+    { title: "Author", url: "/" },
+    { title: "Contact", url: "/" }
+  ],
+  categories: [
+    { title: "Lifestyle", url: "/" },
+    { title: "Technology", url: "/" },
+    { title: "Travel", url: "/" },
+    { title: "Business", url: "/" },
+    { title: "Economy", url: "/" },
+    { title: "Sports", url: "/" }
+  ],
+  newsletter: {
+    title: "Weekly Newsletter",
+    description: "Get blog articles and offers via email.",
+    buttonText: "Subscribe"
+  },
+  copyrightInfo: {
+    logo: "Codebrow",
+    year: new Date().getFullYear(),
+    rightsText: "All Rights Reserved."
+  },
+  policies: [
+    { title: "Terms of Use", url: "/" },
+    { title: "Privacy Policy", url: "/" },
+    { title: "Cookie Policy", url: "/" }
+  ]
+};

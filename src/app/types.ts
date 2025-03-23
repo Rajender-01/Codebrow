@@ -28,3 +28,36 @@ export interface NavigationItem {
 export interface MobileMenuProps {
   navigationData: NavigationItem[];
 }
+
+// types.ts
+export interface FooterLink {
+  title: string;
+  url: string;
+}
+
+export interface FooterData {
+  about: {
+    text: string;
+    email: {
+      label: string;
+      address: string;
+    };
+    phone: {
+      label: string;
+      number: string;
+    };
+  };
+  quickLinks: FooterLink[];
+  categories: FooterLink[];
+  newsletter: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+  copyrightInfo: {
+    logo: string;
+    year: number;
+    rightsText: string;
+  };
+  policies: FooterLink[];
+}

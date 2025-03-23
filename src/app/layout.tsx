@@ -2,6 +2,12 @@ import "@/app/styles/globals.css";
 import Header from "@/components/layout/Header/Header";
 import NewsletterBanner from "@/components/sections/NewsletterBanner";
 import { Inter } from "next/font/google";
+import dynamic from "next/dynamic";
+import Newsletter from "@/components/sections/Newsletter";
+
+const Footer = dynamic(() => import("@/components/layout/Footer/Footer"), {
+  ssr: true
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +35,7 @@ export default function RootLayout({
         <Header />
         <NewsletterBanner />
         {children}
-        {/* footer */}
+        <Footer />
       </body>
     </html>
   );
