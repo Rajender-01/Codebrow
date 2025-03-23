@@ -79,7 +79,7 @@ const Header = () => {
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <Button label={"Contact Us"} link={"/contact"} />
+            <Button label={"Contact Us"} link={"/"} />
           </div>
 
           {/* Mobile Menu Button */}

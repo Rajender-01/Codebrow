@@ -28,3 +28,9 @@ export interface NavigationItem {
 export interface MobileMenuProps {
   navigationData: NavigationItem[];
 }
+
+export interface NewsletterProps {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+}
